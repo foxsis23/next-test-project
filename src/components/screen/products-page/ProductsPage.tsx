@@ -1,6 +1,6 @@
 'use client'
 
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {ProductsData} from "@/types/Product";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {Box, TablePagination, Typography} from "@mui/material";
@@ -41,6 +41,13 @@ export const ProductsPage:FC<ProductsPageProps> = ({data}) => {
         params.set('page','1');
         replace(`${pathname}?${params.toString()}`);
     };
+
+    useEffect(() => {
+        const params = new URLSearchParams(searchParams);
+        params.set('limit', '10');
+        params.set('page','1');
+        replace(`${pathname}?${params.toString()}`);
+    }, []);
 
     return(
         <>

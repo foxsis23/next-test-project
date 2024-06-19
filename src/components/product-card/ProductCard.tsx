@@ -16,7 +16,7 @@ const ProductCard:FC<ProductCardProps> = ({product}) => {
 
     return(
         <Card sx={styles.card}>
-            <CardMedia image={product.images[0]} sx={styles.img} />
+            <CardMedia image={product.image} sx={styles.img} />
             <CardContent>
                 <Typography variant='h5'>{product.title}</Typography>
                 <Typography variant='body2'>{product.description.slice(0,78) + '...'}</Typography>

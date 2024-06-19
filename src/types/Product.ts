@@ -6,9 +6,8 @@ export interface IProduct{
     description: string,
     category: string,
     price: number,
-    discountPercentage: number,
     rating: number,
-    images: string[]
+    image: string,
 }
 
 export interface ProductsData{

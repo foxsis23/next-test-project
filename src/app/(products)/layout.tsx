@@ -1,12 +1,12 @@
 import React, {ReactNode} from 'react';
-import {Box} from "@mui/material";
 
-import * as styles from './ProductsLayout.styles'
+
+import styles from './ProductsLayout.module.css'
 
 const ProductsLayout = ({children}:{children:ReactNode}) => (
-    <Box sx={styles.wrapper}>
+    <main className={styles.wrapper}>
         {children}
-    </Box>
+    </main>
 );
 
 export default ProductsLayout;
