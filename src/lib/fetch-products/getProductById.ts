@@ -1,7 +1,7 @@
 
 export const fetchProductById = async (id:string) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/products/${id}`,{
+        const response = await fetch(`https://next-test-project-eev8es50m-foxsis23s-projects.vercel.app/api/products/${id}`,{
             cache:'force-cache'
         });
 
