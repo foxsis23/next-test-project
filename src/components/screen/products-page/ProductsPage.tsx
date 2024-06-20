@@ -30,6 +30,7 @@ export const ProductsPage:FC<ProductsPageProps> = ({data}) => {
     ) => {
         const params = new URLSearchParams(searchParams);
         params.set('page', (page + 1).toString());
+
         replace(`${pathname}?${params.toString()}`);
     };
 
@@ -37,17 +38,30 @@ export const ProductsPage:FC<ProductsPageProps> = ({data}) => {
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const params = new URLSearchParams(searchParams);
+
         params.set('limit', event.target.value.toString());
         params.set('page','1');
+
         replace(`${pathname}?${params.toString()}`);
     };
 
     useEffect(() => {
-        const params = new URLSearchParams(searchParams);
-        params.set('limit', '10');
-        params.set('page','1');
-        replace(`${pathname}?${params.toString()}`);
-    }, []);
+        if(currentPage && limit){
+            const params = new URLSearchParams(searchParams);
+
+            params.set('limit', limit.toString());
+            params.set('page',currentPage.toString());
+
+            replace(`${pathname}?${params.toString()}`)
+        }else{
+            const params = new URLSearchParams(searchParams);
+
+            params.set('limit', '10');
+            params.set('page','1');
+
+            replace(`${pathname}?${params.toString()}`);
+        }
+    }, [currentPage,limit]);
 
     return(
         <>

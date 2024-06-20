@@ -2,6 +2,8 @@
 import ProductsPage from "@/components/screen/products-page/ProductsPage";
 import {fetchProducts} from "@/lib/fetch-products/getAllProducts";
 
+//SSR
+
 
 const Home = async({
        searchParams,
