@@ -2,6 +2,7 @@
 import ProductsPage from "@/components/screen/products-page/ProductsPage";
 import {fetchProducts} from "@/lib/fetch-products/getAllProducts";
 import {Metadata} from "next";
+import {ProductsData} from "@/types/Product";
 
 
 export const metadata: Metadata = {
@@ -10,8 +11,6 @@ export const metadata: Metadata = {
 }
 
 //SSR
-
-
 const Home = async({
        searchParams,
    }: {
@@ -24,7 +23,11 @@ const Home = async({
     const limit = Number(searchParams.limit);
 
     const products = await fetchProducts(limit,page);
-    return <ProductsPage data={products} />
+
+    if(products){
+        return <ProductsPage data={products} />
+    }
+
 }
 
 export default Home

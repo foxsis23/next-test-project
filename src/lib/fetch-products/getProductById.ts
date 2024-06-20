@@ -1,5 +1,6 @@
+import {IProduct} from "@/types/Product";
 
-export const fetchProductById = async (id:string) => {
+export const fetchProductById = async (id:string):Promise<IProduct | undefined> => {
     try {
         const response = await fetch(`http://localhost:3000/api/products/${id}`,{
             cache:'force-cache'
@@ -9,7 +10,7 @@ export const fetchProductById = async (id:string) => {
             throw new Error('Error occurred');
         }
 
-        const data = await response.json();
+        const data:IProduct = await response.json();
 
         return data;
     } catch (error) {
