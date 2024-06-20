@@ -5,9 +5,6 @@ import {ProductsData} from "@/types/Product";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {Box, TablePagination, Typography} from "@mui/material";
 
-import Script from "next/script";
-import { FAQPage, WithContext } from "schema-dts";
-
 import * as styles from './ProductsPage.styles';
 import productStyles from './ProductsPage.module.css';
 import ProductCard from "@/components/product-card/ProductCard";

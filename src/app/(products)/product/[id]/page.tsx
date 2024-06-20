@@ -11,8 +11,8 @@ export async function generateMetadata(
     const product = await fetchProductById(params.id);
 
     return {
-        title: product?.title,
-        description:product?.description
+        title: product.title,
+        description:product.description
     }
 }
 
@@ -20,9 +20,7 @@ export async function generateMetadata(
 const ProductItemPage = async({params}:{params:{id:string}}) => {
     const product = await fetchProductById(params.id);
 
-    if(product){
-        return <ProductItemPageById product={product} />
-    }
+    return <ProductItemPageById product={product} />
 
 
 };
