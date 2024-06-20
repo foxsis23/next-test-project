@@ -1,7 +1,7 @@
 
 export const fetchProducts = async (limit:number,page:number) => {
     try {
-        const response = await fetch(`https://next-test-project-eev8es50m-foxsis23s-projects.vercel.app/api/products?limit=${limit}&page=${page}`,{
+        const response = await fetch(`https://next-test-project-ruby.vercel.app/api/products?limit=${limit}&page=${page}`,{
             cache:'no-store'
         });
 
