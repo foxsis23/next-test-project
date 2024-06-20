@@ -1,6 +1,13 @@
 
 import ProductsPage from "@/components/screen/products-page/ProductsPage";
 import {fetchProducts} from "@/lib/fetch-products/getAllProducts";
+import {Metadata} from "next";
+
+
+export const metadata: Metadata = {
+    title: 'Products',
+    description:'Catalog of all products'
+}
 
 //SSR
 
